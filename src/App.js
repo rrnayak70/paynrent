@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import AdminLogin from "./Components/Administrator/Administrator/AdminLogin"
+import Dashboard from "./Components/Administrator/Administrator/Dashboard";
+import { BrowserRouter as Router ,Route,Routes} from 'react-router-dom'
+import Home from "./Components/UserInterface/Home";
+import VehicleDetails from "./Components/UserInterface/VehicleDetails";
+import VehicleDetailComponent from "./Components/UserInterface/VehicleDetailComponent";
+import OtpInterface from "./Components/UserInterface/MyComponents/OtpInterface";
+import PaymentGateway from "./Components/UserInterface/PaymentGateway";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Router>
+      <Routes>
+        
+        <Route element={<Home/>} path="/home" />
+        <Route element={<VehicleDetails/>} path="/vehicledetails" />
+        <Route element={<AdminLogin/>} path="/" />
+        <Route element={<Dashboard/>} path="/dashboard/*" />
+        <Route element={<VehicleDetailComponent/>} path="/vehicledetailcomponent"/>
+        <Route element={<PaymentGateway/>} path="/paymentgateway"/>
+        
+      </Routes>
+    </Router>
     </div>
   );
 }
