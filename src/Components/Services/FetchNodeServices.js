@@ -1,6 +1,6 @@
 
 import axios from "axios"
-const ServerURL="http://localhost:5000"
+const ServerURL="https://paynrent-backend-50hljavl6-rrnayak70.vercel.app"
  
 const getData=async(url)=>{
     try{
